@@ -5,10 +5,16 @@ import {
   Flex,
   useColorMode,
   VStack,
-  Heading,
+  Text,
   Icon
 } from '@chakra-ui/react'
-import { FaLine, FaFacebookSquare, FaInstagramSquare } from 'react-icons/fa'
+import {
+  FaLine,
+  FaFacebookSquare,
+  FaInstagramSquare,
+  FaGithubAlt
+} from 'react-icons/fa'
+import { BsFillLightningChargeFill } from 'react-icons/bs'
 import { RiCopyrightLine } from 'react-icons/ri'
 import { Logo } from 'assets/logo/logo'
 
@@ -20,7 +26,7 @@ const Footer = () => {
         flexDirection={{ base: 'column', md: 'row' }}
         color='white'
         gridGap={10}
-        p={{ base: 10, lg: '75px 150px 0 150px', xl: '75px 300px 0 300px' }}
+        p={{ base: 15, lg: '75px 150px 0 150px', xl: '75px 300px 0 300px' }}
         w='100%'
       >
         <Flex alignSelf='center' mr={{ base: 0, md: 'auto' }}>
@@ -60,10 +66,27 @@ const Footer = () => {
           </ListItem>
         </List>
       </Flex>
-      <Heading size='xs' p={5} color='white' fontWeight='400'>
-        <Icon as={RiCopyrightLine} />
-        Design by Zoe Kang
-      </Heading>
+      <Flex
+        size='xs'
+        alignItems='center'
+        p={5}
+        color='white'
+        fontWeight='400'
+        flexDirection={{ base: 'column', md: 'row' }}
+      >
+        <Text>
+          <Icon as={RiCopyrightLine} w={5} h={5} />
+          Design by Zoe Kang&nbsp;&nbsp;|&nbsp;&nbsp;
+        </Text>
+        <Text>
+          <Icon as={FaGithubAlt} w={5} h={5} />
+          Made by Eric Chiu&nbsp;&nbsp;|&nbsp;&nbsp;
+        </Text>
+        <Text>
+          <Icon as={BsFillLightningChargeFill} w={5} h={5} />
+          source from 「交通部PTX平台」
+        </Text>
+      </Flex>
     </VStack>
   )
 }
