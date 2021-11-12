@@ -17,16 +17,14 @@ import { SpotCard } from 'Components/Cards'
 const SpotPage = () => {
   const { colorMode } = useColorMode()
   const navigate = useNavigate()
-  const { classify } = useParams()
+  const { place, classify } = useParams()
   const [currentSpots, setCurrentSpots] = useState([])
-  const [classitem, setClassItem] = useState('')
-  const [searchTerm, setSearchTerm] = useState('')
+  const [classitem, setClassItem] = useState(classify)
+  const [searchTerm, setSearchTerm] = useState(place)
   const [skip, setSkip] = useState(0)
-  const [spots, search] = useSpots({ target: 'Restaurant' }, '', classify, 0)
+  const [spots, search] = useSpots({ target: 'Restaurant' }, place, classify)
   const [loadMore, setLoadMore] = useState(true)
-  // const { errorToast } = useMyToast('error123')
   const isInitialMount = useRef(true)
-  // console.log(1)
   useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false
@@ -34,14 +32,14 @@ const SpotPage = () => {
       setLoadMore(true)
       setSkip(0)
       setCurrentSpots([])
-      search(searchTerm, '', classitem, skip)
+      search({ term: searchTerm, classify: classitem, skip: 0 })
     }
   }, [searchTerm, classitem])
   useEffect(() => {
     if (skip === 0) {
       return {}
     } else {
-      search(searchTerm, '', classitem, skip)
+      search({ term: searchTerm, classify: classitem, skip })
     }
   }, [skip])
   useEffect(() => {

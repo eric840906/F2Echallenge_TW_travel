@@ -1,24 +1,25 @@
 import { useEffect, useState } from 'react'
 import { travelInfo } from 'api/travelapi'
 
-const useSpots = (
-  options,
-  defaultSearchTerm,
-  defaultPlace = '',
-  defaultClass = ''
-) => {
+const useSpots = (options, defaultSearchTerm, defaultClass = '') => {
   const [spots, setSpots] = useState([])
   useEffect(() => {
-    // console.log('defaultSearchTerm' + defaultSearchTerm)
-    search(defaultSearchTerm, defaultPlace, defaultClass)
-  }, [defaultSearchTerm, defaultPlace, defaultClass])
-  const search = async (term, place = '', classify = '', skip = '') => {
+    const searchTerm = defaultSearchTerm === 'Taiwan' ? '' : defaultSearchTerm
+    const searchClass = defaultClass === 'All' ? '' : defaultClass
+    console.log('searchTerm' + searchTerm)
+    console.log('searchClass' + searchClass)
+    search({ term: searchTerm, classify: searchClass })
+  }, [defaultSearchTerm, defaultClass])
+  const search = async ({ term, classify, skip }) => {
     const { target } = options
-    const classifyString = classify ? `$filter=Class eq '${classify}'` : ''
+    const searchTerm = term === 'Taiwan' ? '' : term
+    const searchClass = classify === 'All' ? '' : classify
+    const classifyString = searchClass
+      ? `$filter=Class eq '${searchClass}'`
+      : ''
     const skipString = skip ? `$skip=${skip}` : ''
-    // console.log('classifyString' + classifyString)
     const tail = '$top=30&$format=JSON'
-    const finalUrl = `${target}/${term}?${skipString}&${classifyString}&${tail}`
+    const finalUrl = `${target}/${searchTerm}?${skipString}&${classifyString}&${tail}`
     console.log('final' + finalUrl)
     try {
       const { data } = await travelInfo.get(finalUrl)

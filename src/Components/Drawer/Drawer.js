@@ -56,7 +56,7 @@ const SideDrawer = ({ onDrawerOpen, onDrawerClose }) => {
             backgroud={colorMode === 'light' ? 'white' : 'brand.black'}
           >
             <VStack gridGap={3} mt={10} textAlign='center'>
-              <NavLink to='/scenicspots/Taipei' style={{ width: '100%' }}>
+              <NavLink to='/scenicspots/Taiwan' style={{ width: '100%' }}>
                 <Text variant='switch' fontSize='20px'>
                   旅遊景點
                 </Text>

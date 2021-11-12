@@ -11,7 +11,7 @@ const SpotPage = () => {
   const navigate = useNavigate()
   const { place } = useParams()
   const [currentSpots, setCurrentSpots] = useState([])
-  const [searchTerm, setSearchTerm] = useState('Taipei')
+  const [searchTerm, setSearchTerm] = useState(place)
   const [skip, setSkip] = useState(0)
   const [spots, search] = useSpots({ target: 'ScenicSpot' }, place)
   const [loadMore, setLoadMore] = useState(true)
@@ -23,14 +23,14 @@ const SpotPage = () => {
       setLoadMore(true)
       setSkip(0)
       setCurrentSpots([])
-      search(searchTerm, '', '', 0)
+      search({ term: searchTerm, skip: 0 })
     }
   }, [searchTerm])
   useEffect(() => {
     if (skip === 0) {
       return {}
     } else {
-      search(searchTerm, '', '', skip)
+      search({ term: searchTerm, skip })
     }
   }, [skip])
   useEffect(() => {

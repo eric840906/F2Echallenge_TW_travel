@@ -76,15 +76,19 @@ const Footer = () => {
       >
         <Text>
           <Icon as={RiCopyrightLine} w={5} h={5} />
-          Design by Zoe Kang&nbsp;&nbsp;|&nbsp;&nbsp;
+          &nbsp;Design by Zoe Kang&nbsp;&nbsp;|&nbsp;&nbsp;
         </Text>
-        <Text>
+        <a
+          href='https://github.com/eric840906'
+          target='_blank'
+          rel='noreferrer'
+        >
           <Icon as={FaGithubAlt} w={5} h={5} />
-          Made by Eric Chiu&nbsp;&nbsp;|&nbsp;&nbsp;
-        </Text>
+          &nbsp;Made by Eric Chiu &nbsp;&nbsp;|&nbsp;&nbsp;
+        </a>
         <Text>
           <Icon as={BsFillLightningChargeFill} w={5} h={5} />
-          source from 「交通部PTX平台」
+          Source from 「交通部PTX平台」
         </Text>
       </Flex>
     </VStack>
