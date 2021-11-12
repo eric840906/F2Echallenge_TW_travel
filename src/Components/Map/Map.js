@@ -6,7 +6,6 @@ import PropTypes from 'prop-types'
 
 const MyMap = ({ lat, lng, name }) => {
   const { colorMode } = useColorMode()
-  console.log(name)
   const Marker = () => (
     <Flex
       position='absolute'
