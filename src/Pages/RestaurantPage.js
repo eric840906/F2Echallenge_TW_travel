@@ -13,7 +13,6 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useSpots } from 'hooks'
 import { SectionDivider } from 'Components/SectionDivider'
 import { SpotCard } from 'Components/Cards'
-// import useMyToast from 'hooks/useMyToast'
 const SpotPage = () => {
   const { colorMode } = useColorMode()
   const navigate = useNavigate()

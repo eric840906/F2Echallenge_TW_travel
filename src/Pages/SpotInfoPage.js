@@ -19,6 +19,7 @@ import { useDetail, useNearby } from 'hooks'
 import { useRef, useState, useEffect } from 'react'
 import { SectionDivider } from 'Components/SectionDivider'
 import { SpotCard } from 'Components/Cards'
+import { MyMap } from 'Components/Map'
 const SpotInfoPage = () => {
   const navigate = useNavigate()
   const { colorMode } = useColorMode()
@@ -176,6 +177,11 @@ const SpotInfoPage = () => {
           <Text>{currentDetail[0].DescriptionDetail}</Text>
         </Flex>
       </Grid>
+      <MyMap
+        lat={currentDetail[0] && currentDetail[0].Position.PositionLat}
+        lng={currentDetail[0] && currentDetail[0].Position.PositionLon}
+        name={currentDetail[0].Name}
+      />
       <VStack px={5}>
         <SectionDivider
           title='附近景點'
