@@ -5,6 +5,7 @@ const SpotCard = ({ spot, onClick }) => {
   return (
     <AspectRatio key={spot.ID} ratio={1.67 / 1}>
       <Flex
+        cursor='pointer'
         key={spot.ID}
         justifyContent='end !important'
         borderRadius='10px'

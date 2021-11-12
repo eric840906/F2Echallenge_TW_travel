@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router'
 const HomePage = () => {
   const [currentSpots, setCurrentSpots] = useState([])
   // const [currentRestaurants, setCurrentRestaurants] = useState([])
-  const [spots] = useSpots({ target: 'ScenicSpot' }, '')
+  const [spots] = useSpots({ target: 'ScenicSpot' }, 'Taipei')
   // const [restaurants] = useSpots('Restaurant', '')
   const { colorMode } = useColorMode()
   const navigate = useNavigate()

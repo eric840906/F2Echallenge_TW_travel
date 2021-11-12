@@ -36,7 +36,7 @@ const Navbar = ({ onHamburgerClick }) => {
         />
       </Flex>
       <Flex display={{ base: 'none', md: 'flex' }} gridGap='5rem' mr='auto'>
-        <NavLink to='/scenicspots/Taipei'>
+        <NavLink to='/scenicspots/Taiwan'>
           <Text variant='switch' fontSize='20px'>
             旅遊景點
           </Text>
