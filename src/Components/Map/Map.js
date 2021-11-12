@@ -14,9 +14,7 @@ const MyMap = ({ lat, lng, name }) => {
       transform='translate(-50%, -100%)'
       onClick={() =>
         window.open(
-          `http://www.google.com/maps/search/${name
-            .split('')
-            .join('+')}/@${lat},${lng},20z`,
+          `http://www.google.com/maps/search/${name}/@${lat},${lng},20z`,
           '_blank'
         )
       }
