@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.04303ff4.chunk.css",
-    "main.js": "./static/js/main.b7d82101.chunk.js",
-    "main.js.map": "./static/js/main.b7d82101.chunk.js.map",
+    "main.js": "./static/js/main.85494dbb.chunk.js",
+    "main.js.map": "./static/js/main.85494dbb.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.d7589b3b.js",
     "runtime-main.js.map": "./static/js/runtime-main.d7589b3b.js.map",
     "static/css/2.4d8d6c40.chunk.css": "./static/css/2.4d8d6c40.chunk.css",
@@ -15,13 +15,35 @@
     "index.html": "./index.html",
     "static/css/2.4d8d6c40.chunk.css.map": "./static/css/2.4d8d6c40.chunk.css.map",
     "static/css/main.04303ff4.chunk.css.map": "./static/css/main.04303ff4.chunk.css.map",
-    "static/js/2.5d7e6f9e.chunk.js.LICENSE.txt": "./static/js/2.5d7e6f9e.chunk.js.LICENSE.txt"
+    "static/js/2.5d7e6f9e.chunk.js.LICENSE.txt": "./static/js/2.5d7e6f9e.chunk.js.LICENSE.txt",
+    "static/media/ChanghuaCounty.5602ddb2.jpg": "./static/media/ChanghuaCounty.5602ddb2.jpg",
+    "static/media/Chiayi.6a2f07a8.jpg": "./static/media/Chiayi.6a2f07a8.jpg",
+    "static/media/ChiayiCounty.411f69b7.jpg": "./static/media/ChiayiCounty.411f69b7.jpg",
+    "static/media/Hsinchu.aa00014d.jpg": "./static/media/Hsinchu.aa00014d.jpg",
+    "static/media/HsinchuCounty.aeb3e0e9.jpg": "./static/media/HsinchuCounty.aeb3e0e9.jpg",
+    "static/media/HualienCounty.3d60e433.jpg": "./static/media/HualienCounty.3d60e433.jpg",
+    "static/media/Kaohsiung.279396f9.jpg": "./static/media/Kaohsiung.279396f9.jpg",
+    "static/media/Keelung.5665609c.jpg": "./static/media/Keelung.5665609c.jpg",
+    "static/media/KinmenCounty.7dd5c4ac.jpg": "./static/media/KinmenCounty.7dd5c4ac.jpg",
+    "static/media/LienchiangCounty.fa0b57e1.jpg": "./static/media/LienchiangCounty.fa0b57e1.jpg",
+    "static/media/MiaoliCounty.28ea0377.jpg": "./static/media/MiaoliCounty.28ea0377.jpg",
+    "static/media/NantouCounty.4b8ffe82.jpg": "./static/media/NantouCounty.4b8ffe82.jpg",
+    "static/media/NewTaipei.031de361.jpg": "./static/media/NewTaipei.031de361.jpg",
+    "static/media/PenghuCounty.47424c4a.jpg": "./static/media/PenghuCounty.47424c4a.jpg",
+    "static/media/PingtungCounty.b2944d08.jpg": "./static/media/PingtungCounty.b2944d08.jpg",
+    "static/media/Taichung.9613ba6d.jpg": "./static/media/Taichung.9613ba6d.jpg",
+    "static/media/Tainan.53c149c5.jpg": "./static/media/Tainan.53c149c5.jpg",
+    "static/media/Taipei.22d2d428.jpg": "./static/media/Taipei.22d2d428.jpg",
+    "static/media/TaitungCounty.e908d2f5.jpg": "./static/media/TaitungCounty.e908d2f5.jpg",
+    "static/media/Taoyuan.afa2b479.jpg": "./static/media/Taoyuan.afa2b479.jpg",
+    "static/media/YilanCounty.daac4b79.jpg": "./static/media/YilanCounty.daac4b79.jpg",
+    "static/media/YunlinCounty.5a45d005.jpg": "./static/media/YunlinCounty.5a45d005.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d7589b3b.js",
     "static/css/2.4d8d6c40.chunk.css",
     "static/js/2.5d7e6f9e.chunk.js",
     "static/css/main.04303ff4.chunk.css",
-    "static/js/main.b7d82101.chunk.js"
+    "static/js/main.85494dbb.chunk.js"
   ]
 }
