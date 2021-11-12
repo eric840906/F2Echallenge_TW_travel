@@ -22,8 +22,8 @@ jobs:
         npm install
         npm run build
       env:
-        REACT_APP_APPID = ${{secrets.REACT_APP_APPID}}
-        REACT_APP_APPKEY = ${{secrets.REACT_APP_APPKEY}}
+        REACT_APP_APPID: ${{secrets.REACT_APP_APPID}}
+        REACT_APP_APPKEY: ${{secrets.REACT_APP_APPKEY}}
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with: 
