@@ -10,7 +10,7 @@ const App = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
-      <Router basename='/'>
+      <Router basename="/">
         <ScrollToTop />
         <Navbar onHamburgerClick={onOpen} />
         <SideDrawer onDrawerOpen={isOpen} onDrawerClose={onClose} />

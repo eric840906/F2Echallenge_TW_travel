@@ -82,8 +82,8 @@ const SpotPage = () => {
   //       </Flex>
   //     </AspectRatio>
   //   ))
-  const renderCard = spots => {
-    return spots.map(spot => (
+  const renderCard = (spots) => {
+    return spots.map((spot) => (
       <SpotCard
         key={spot.ID}
         spot={spot}
@@ -92,26 +92,26 @@ const SpotPage = () => {
     ))
   }
   return (
-    <VStack w='100%' gridGap={7} my={14}>
+    <VStack w="100%" gridGap={7} my={14}>
       <VStack px={5}>
         <SectionDivider
-          title='想去哪玩?'
+          title="想去哪玩?"
           color={colorMode === 'light' ? 'brand.200' : 'brand.100'}
         />
       </VStack>
       <Select
-        maxW='300px'
-        onChange={e => setSearchTerm(e.currentTarget.value)}
+        maxW="300px"
+        onChange={(e) => setSearchTerm(e.currentTarget.value)}
         value={searchTerm}
       >
-        {[...cityMap].map(city => (
+        {[...cityMap].map((city) => (
           <option key={city[1]} value={city[1]}>
             {city[0]}
           </option>
         ))}
       </Select>
       <Grid
-        w='80%'
+        w="80%"
         templateColumns={{
           base: 'repeat(1, 1fr)',
           sm: 'repeat(2, 1fr)',
@@ -123,7 +123,7 @@ const SpotPage = () => {
         {renderCard(currentSpots)}
       </Grid>
       <Button
-        variant='default'
+        variant="default"
         disabled={!loadMore}
         onClick={() => setSkip(skip + 30)}
       >
