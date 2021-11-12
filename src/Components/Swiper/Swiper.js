@@ -9,57 +9,57 @@ import { imageBox } from 'assets/style'
 
 SwiperCore.use([Pagination, EffectCoverflow])
 export const TheSwiper = ({ itemArr, options, func }) => {
-  const defaultSwiper = itemArr.map(item => {
+  const defaultSwiper = itemArr.map((item) => {
     return (
       <SwiperSlide style={{ width: '100%' }} key={item.id}>
         <Heading
-          color='brand.heading'
+          color="brand.heading"
           style={{ padding: 20 }}
-          textAlign='center'
-          as='h4'
-          size='md'
+          textAlign="center"
+          as="h4"
+          size="md"
         >
           {item.title}
         </Heading>
         <Flex
-          justifyContent='center'
+          justifyContent="center"
           gridGap={5}
           style={{ marginBottom: 40 }}
           flexDirection={{ base: 'column', md: 'row' }}
         >
           <Text
             w={{ base: '80%', md: '35%' }}
-            color='brand.text'
+            color="brand.text"
             alignSelf={{ base: 'center', md: 'baseline' }}
           >
             {item.text}
           </Text>
-          <Image {...imageBox} src={item.image} alt='' />
+          <Image {...imageBox} src={item.image} alt="" />
         </Flex>
       </SwiperSlide>
     )
   })
-  const choiceSwiper = itemArr.map(item => {
+  const choiceSwiper = itemArr.map((item) => {
     return (
       <SwiperSlide key={item.ID}>
         <Flex
           onClick={func(item)}
-          borderRadius='10px'
-          overflow='hidden'
-          flexDirection='column'
-          boxShadow='lg'
-          justifyContent='end'
-          pb='10%'
-          marginBottom='40px'
-          bg='brand.100'
+          borderRadius="10px"
+          overflow="hidden"
+          flexDirection="column"
+          boxShadow="lg"
+          justifyContent="end"
+          pb="10%"
+          marginBottom="40px"
+          bg="brand.100"
           backgroundImage={
             item.Picture.PictureUrl1
               ? item.Picture.PictureUrl1
               : 'http://www.vvc.cl/wp-content/uploads/2016/09/ef3-placeholder-image.jpg'
           }
-          backgroundPosition='center'
-          backgroundRepeat='no-repeat'
-          backgroundSize='cover'
+          backgroundPosition="center"
+          backgroundRepeat="no-repeat"
+          backgroundSize="cover"
           h={{ base: '200px', sm: '300px', md: '600px' }}
           w={{ base: '250px', sm: 'auto' }}
         >
@@ -69,11 +69,11 @@ export const TheSwiper = ({ itemArr, options, func }) => {
             w={{ base: '315px', md: '600px' }}
             alt=''
           /> */}
-          <Flex flexDirection='column' p={{ base: 2, md: 3 }} bg='#000000a8'>
+          <Flex flexDirection="column" p={{ base: 2, md: 3 }} bg="#000000a8">
             <Heading
-              textAlign='center'
+              textAlign="center"
               fontSize={{ base: '16px', sm: '26px', md: '36px' }}
-              color='white'
+              color="white"
             >
               {item.Name}
             </Heading>
@@ -91,7 +91,7 @@ export const TheSwiper = ({ itemArr, options, func }) => {
     }
   }
   return (
-    <Flex w='100%'>
+    <Flex w="100%">
       <Swiper
         {...options}
         // onSlideChange={() => console.log('slide change')}
