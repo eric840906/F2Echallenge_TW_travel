@@ -1,12 +1,8 @@
 import axios from 'axios'
 import jsSHA from 'jssha'
-// APP ID：8d1f8b7eeb79421ba1ed2914848b717d
-// APP Key：W3Xh3Nu_xQlCw7EY5CctQegleQ0
 const getAuthorizationHeader = () => {
-  //  填入自己 ID、KEY 開始
   const AppID = process.env.REACT_APP_APPID
   const AppKey = process.env.REACT_APP_APPKEY
-  //  填入自己 ID、KEY 結束
   const GMTString = new Date().toGMTString()
   const ShaObj = new jsSHA('SHA-1', 'TEXT')
   ShaObj.setHMACKey(AppKey, 'TEXT')
