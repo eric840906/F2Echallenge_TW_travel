@@ -38,6 +38,7 @@ const MyMap = ({ lat, lng, name }) => {
         transform='translate(8px, 5px)'
         position='absolute'
         size='sm'
+        zIndex={1}
       >
         點擊圖示連結Google map
       </Heading>
