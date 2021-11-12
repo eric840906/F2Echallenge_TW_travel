@@ -7,7 +7,6 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { ScrollToTop } from 'util/ScrollTop'
 
 const App = () => {
-  console.log(process.env)
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
