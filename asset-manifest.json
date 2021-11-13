@@ -1,21 +1,27 @@
 {
   "files": {
     "main.css": "./static/css/main.04303ff4.chunk.css",
-    "main.js": "./static/js/main.85494dbb.chunk.js",
-    "main.js.map": "./static/js/main.85494dbb.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.d7589b3b.js",
-    "runtime-main.js.map": "./static/js/runtime-main.d7589b3b.js.map",
+    "main.js": "./static/js/main.6602a33f.chunk.js",
+    "main.js.map": "./static/js/main.6602a33f.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.c589996f.js",
+    "runtime-main.js.map": "./static/js/runtime-main.c589996f.js.map",
     "static/css/2.4d8d6c40.chunk.css": "./static/css/2.4d8d6c40.chunk.css",
-    "static/js/2.5d7e6f9e.chunk.js": "./static/js/2.5d7e6f9e.chunk.js",
-    "static/js/2.5d7e6f9e.chunk.js.map": "./static/js/2.5d7e6f9e.chunk.js.map",
-    "static/js/3.93a71489.chunk.js": "./static/js/3.93a71489.chunk.js",
-    "static/js/3.93a71489.chunk.js.map": "./static/js/3.93a71489.chunk.js.map",
-    "static/js/4.5f17cdb4.chunk.js": "./static/js/4.5f17cdb4.chunk.js",
-    "static/js/4.5f17cdb4.chunk.js.map": "./static/js/4.5f17cdb4.chunk.js.map",
+    "static/js/2.4dc476ce.chunk.js": "./static/js/2.4dc476ce.chunk.js",
+    "static/js/2.4dc476ce.chunk.js.map": "./static/js/2.4dc476ce.chunk.js.map",
+    "static/js/3.3f370df4.chunk.js": "./static/js/3.3f370df4.chunk.js",
+    "static/js/3.3f370df4.chunk.js.map": "./static/js/3.3f370df4.chunk.js.map",
+    "static/js/4.4e930832.chunk.js": "./static/js/4.4e930832.chunk.js",
+    "static/js/4.4e930832.chunk.js.map": "./static/js/4.4e930832.chunk.js.map",
+    "static/js/5.75f70b41.chunk.js": "./static/js/5.75f70b41.chunk.js",
+    "static/js/5.75f70b41.chunk.js.map": "./static/js/5.75f70b41.chunk.js.map",
+    "static/js/6.e03e2052.chunk.js": "./static/js/6.e03e2052.chunk.js",
+    "static/js/6.e03e2052.chunk.js.map": "./static/js/6.e03e2052.chunk.js.map",
+    "static/js/7.e5d0de06.chunk.js": "./static/js/7.e5d0de06.chunk.js",
+    "static/js/7.e5d0de06.chunk.js.map": "./static/js/7.e5d0de06.chunk.js.map",
     "index.html": "./index.html",
     "static/css/2.4d8d6c40.chunk.css.map": "./static/css/2.4d8d6c40.chunk.css.map",
     "static/css/main.04303ff4.chunk.css.map": "./static/css/main.04303ff4.chunk.css.map",
-    "static/js/2.5d7e6f9e.chunk.js.LICENSE.txt": "./static/js/2.5d7e6f9e.chunk.js.LICENSE.txt",
+    "static/js/2.4dc476ce.chunk.js.LICENSE.txt": "./static/js/2.4dc476ce.chunk.js.LICENSE.txt",
     "static/media/ChanghuaCounty.5602ddb2.jpg": "./static/media/ChanghuaCounty.5602ddb2.jpg",
     "static/media/Chiayi.6a2f07a8.jpg": "./static/media/Chiayi.6a2f07a8.jpg",
     "static/media/ChiayiCounty.411f69b7.jpg": "./static/media/ChiayiCounty.411f69b7.jpg",
@@ -40,10 +46,10 @@
     "static/media/YunlinCounty.5a45d005.jpg": "./static/media/YunlinCounty.5a45d005.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d7589b3b.js",
+    "static/js/runtime-main.c589996f.js",
     "static/css/2.4d8d6c40.chunk.css",
-    "static/js/2.5d7e6f9e.chunk.js",
+    "static/js/2.4dc476ce.chunk.js",
     "static/css/main.04303ff4.chunk.css",
-    "static/js/main.85494dbb.chunk.js"
+    "static/js/main.6602a33f.chunk.js"
   ]
 }
