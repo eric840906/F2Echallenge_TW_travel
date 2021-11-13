@@ -28,7 +28,6 @@ const SpotInfoPage = () => {
   const { id } = useParams()
   const [nearby, searchNearby] = useNearby({ target: 'ScenicSpot' })
   const [detail, search] = useDetail({ target: 'ScenicSpot' }, id)
-  // console.log(id)
   const isInitialMount = useRef(true)
   useEffect(() => {
     if (isInitialMount.current) {
@@ -52,15 +51,15 @@ const SpotInfoPage = () => {
     setNearbySpots(nearby)
     // console.log(nearbySpots)
   }, [nearby])
-  const renderTag = tagItem => {
+  const renderTag = (tagItem) => {
     return tagItem ? (
       <Flex
-        borderRadius='16px'
+        borderRadius="16px"
         py={1.5}
         px={3}
-        background='brand.100'
-        color='white'
-        fontSize='14px'
+        background="brand.100"
+        color="white"
+        fontSize="14px"
       >
         {tagItem}
       </Flex>
@@ -69,7 +68,7 @@ const SpotInfoPage = () => {
     )
   }
   const renderNearby = () => {
-    return nearbySpots.map(spot => (
+    return nearbySpots.map((spot) => (
       <SpotCard
         key={spot.ID}
         spot={spot}
@@ -80,7 +79,7 @@ const SpotInfoPage = () => {
   return currentDetail[0] ? (
     <VStack gridGap={7} my={14}>
       <Grid
-        w='80%'
+        w="80%"
         templateColumns={{
           base: 'repeat(1, 1fr)',
           lg: 'repeat(2, 1fr)'
@@ -88,16 +87,16 @@ const SpotInfoPage = () => {
         gridGap={5}
       >
         <Image
-          borderRadius='16px'
+          borderRadius="16px"
           src={
             currentDetail[0].Picture.PictureUrl1
               ? currentDetail[0].Picture.PictureUrl1
               : 'http://www.vvc.cl/wp-content/uploads/2016/09/ef3-placeholder-image.jpg'
           }
-          h='100%'
+          h="100%"
         ></Image>
-        <Flex flexDirection='column' gridGap={3}>
-          <Text color='brand.orange' fontSize={{ base: '14px', md: '16px' }}>
+        <Flex flexDirection="column" gridGap={3}>
+          <Text color="brand.orange" fontSize={{ base: '14px', md: '16px' }}>
             {currentDetail[0].City}
           </Text>
           <Flex gridGap={3}>
@@ -107,18 +106,18 @@ const SpotInfoPage = () => {
             {renderTag(currentDetail[0].Level)}
           </Flex>
           <Heading
-            size='md'
+            size="md"
             color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
           >
             {currentDetail[0].Name}
           </Heading>
           <Divider />
           <List spacing={3} my={2}>
-            <ListItem wordBreak='break-all'>
+            <ListItem wordBreak="break-all">
               <ListIcon
                 as={FiClock}
-                w='20px'
-                h='20px'
+                w="20px"
+                h="20px"
                 color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
               />
               {currentDetail[0].OpenTime
@@ -126,11 +125,11 @@ const SpotInfoPage = () => {
                 : '開放空間'}
             </ListItem>
             {currentDetail[0].Phone && (
-              <ListItem wordBreak='break-all'>
+              <ListItem wordBreak="break-all">
                 <ListIcon
                   as={FaPhoneAlt}
-                  w='20px'
-                  h='20px'
+                  w="20px"
+                  h="20px"
                   color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
                 />
                 <a href={`tel: +${currentDetail[0].Phone}`}>
@@ -139,34 +138,34 @@ const SpotInfoPage = () => {
               </ListItem>
             )}
             {currentDetail[0].WebsiteUrl && (
-              <ListItem wordBreak='break-all'>
+              <ListItem wordBreak="break-all">
                 <ListIcon
                   as={RiGlobalLine}
-                  w='25px'
-                  h='25px'
+                  w="25px"
+                  h="25px"
                   color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
                 />
                 <a
                   href={currentDetail[0].WebsiteUrl}
-                  target='_blank'
-                  rel='noreferrer'
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   {currentDetail[0].WebsiteUrl}
                 </a>
               </ListItem>
             )}
             {currentDetail[0].Position && (
-              <ListItem wordBreak='break-all'>
+              <ListItem wordBreak="break-all">
                 <ListIcon
                   as={FiMapPin}
-                  w='25px'
-                  h='25px'
+                  w="25px"
+                  h="25px"
                   color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
                 />
                 <a
                   href={`http://www.google.com/maps/place/${currentDetail[0].Position.PositionLat},${currentDetail[0].Position.PositionLon}`}
-                  target='_blank'
-                  rel='noreferrer'
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   {currentDetail[0].Name}
                 </a>
@@ -184,12 +183,12 @@ const SpotInfoPage = () => {
       />
       <VStack px={5}>
         <SectionDivider
-          title='附近景點'
+          title="附近景點"
           color={colorMode === 'light' ? 'brand.200' : 'brand.100'}
         />
       </VStack>
       <Grid
-        w='80%'
+        w="80%"
         templateColumns={{
           base: 'repeat(1, 1fr)',
           sm: 'repeat(2, 1fr)',
@@ -204,7 +203,7 @@ const SpotInfoPage = () => {
   ) : (
     <VStack gridGap={7} my={14}>
       <Grid
-        w='80%'
+        w="80%"
         templateColumns={{
           base: 'repeat(1, 1fr)',
           md: 'repeat(2, 1fr)'
