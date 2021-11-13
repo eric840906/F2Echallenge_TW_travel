@@ -1,3 +1,4 @@
+// import { useRef, useEffect } from 'react'
 import { Button, Flex, Text, useColorMode } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { Logo } from 'assets/logo/logo'
@@ -6,6 +7,13 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import Proptype from 'prop-types'
 
 const Navbar = ({ onHamburgerClick }) => {
+  // const menuBtn = useRef(null)
+  // useEffect(() => {
+  //   console.log(menuBtn)
+  //   menuBtn.current.focus(() => {
+  //     document.activeElement.blur()
+  //   })
+  // }, [])
   const { colorMode } = useColorMode()
   const navigate = useNavigate()
   return (
@@ -56,6 +64,7 @@ const Navbar = ({ onHamburgerClick }) => {
         w="40px"
         h="40px"
         onClick={onHamburgerClick}
+        onFocus={() => document.activeElement.blur()}
         size="sm"
       >
         <HamburgerIcon

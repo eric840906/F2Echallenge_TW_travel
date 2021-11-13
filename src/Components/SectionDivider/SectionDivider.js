@@ -30,7 +30,7 @@ SectionDivider.propTypes = {
   title: PropTypes.string,
   px: PropTypes.number,
   color: PropTypes.string,
-  icon: PropTypes.node
+  icon: PropTypes.func
 }
 
 export default SectionDivider
