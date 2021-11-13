@@ -9,11 +9,13 @@ import {
   Text,
   Heading,
   useColorMode,
-  Divider
+  Divider,
+  Icon
 } from '@chakra-ui/react'
 import { AiFillStar } from 'react-icons/ai'
 import { FaPhoneAlt } from 'react-icons/fa'
 import { RiGlobalLine } from 'react-icons/ri'
+import { BiRestaurant, BiBed, BiMapAlt } from 'react-icons/bi'
 import { FiMapPin, FiClock } from 'react-icons/fi'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useDetail, useNearby } from 'hooks'
@@ -97,6 +99,17 @@ const DetailPage = () => {
       ''
     )
   }
+  const renderIcon = (size) => {
+    if (target === 'ScenicSpot') {
+      return <Icon as={BiMapAlt} h={size} w={size} verticalAlign="sub" />
+    }
+    if (target === 'Restaurant') {
+      return <Icon as={BiRestaurant} h={size} w={size} verticalAlign="sub" />
+    }
+    if (target === 'Hotel') {
+      return <Icon as={BiBed} h={size} w={size} verticalAlign="sub" />
+    }
+  }
   const renderNearby = (target, spots) => {
     return spots.map((spot) => (
       <SpotCard
@@ -143,9 +156,10 @@ const DetailPage = () => {
             {renderTag(currentDetail[0].Level)}
           </Flex>
           <Heading
-            size="md"
-            color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
+            size="lg"
+            color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.800'}
           >
+            {renderIcon('30px')}
             {currentDetail[0].Name}
           </Heading>
           <Divider />
@@ -155,7 +169,7 @@ const DetailPage = () => {
                 as={FiClock}
                 w="20px"
                 h="20px"
-                color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
+                color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.800'}
               />
               {currentDetail[0].OpenTime ? currentDetail[0].OpenTime : '無資訊'}
             </ListItem>
@@ -165,7 +179,7 @@ const DetailPage = () => {
                   as={FaPhoneAlt}
                   w="20px"
                   h="20px"
-                  color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
+                  color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.800'}
                 />
                 <a href={`tel: +${currentDetail[0].Phone}`}>
                   {currentDetail[0].Phone}
@@ -178,7 +192,7 @@ const DetailPage = () => {
                   as={RiGlobalLine}
                   w="25px"
                   h="25px"
-                  color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
+                  color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.800'}
                 />
                 <a
                   href={currentDetail[0].WebsiteUrl}
@@ -195,7 +209,7 @@ const DetailPage = () => {
                   as={FiMapPin}
                   w="25px"
                   h="25px"
-                  color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
+                  color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.800'}
                 />
                 <a
                   href={`http://www.google.com/maps/place/${currentDetail[0].Position.PositionLat},${currentDetail[0].Position.PositionLon}`}
@@ -212,7 +226,7 @@ const DetailPage = () => {
                   as={AiFillStar}
                   w="25px"
                   h="25px"
-                  color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
+                  color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.800'}
                 />
                 {currentDetail[0].Grade}
               </ListItem>
@@ -231,6 +245,7 @@ const DetailPage = () => {
       />
       <VStack px={5}>
         <SectionDivider
+          icon={BiMapAlt}
           title="附近景點"
           color={colorMode === 'light' ? 'brand.200' : 'brand.100'}
         />
@@ -249,6 +264,7 @@ const DetailPage = () => {
       </Grid>
       <VStack px={5}>
         <SectionDivider
+          icon={BiRestaurant}
           title="附近餐廳"
           color={colorMode === 'light' ? 'brand.200' : 'brand.100'}
         />
@@ -267,6 +283,7 @@ const DetailPage = () => {
       </Grid>
       <VStack px={5}>
         <SectionDivider
+          icon={BiBed}
           title="附近住宿"
           color={colorMode === 'light' ? 'brand.200' : 'brand.100'}
         />

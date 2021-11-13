@@ -21,24 +21,13 @@ const theme = extendTheme({
       gray: '#cfcfcf',
       black: '#1d1d1d',
       orange: '#fa7e5f'
-    },
-    brandDark: {
-      100: '#392a93',
-      200: '#9086cc',
-      text: '#3c3c3c',
-      heading: '#4f4f4f',
-      green: '#65bb63',
-      pink: '#ff7878',
-      blue: '#477bff',
-      beige: '#eeeaea',
-      gray: '#848484'
     }
   },
   styles: {
-    global: props => ({
+    global: (props) => ({
       body: {
         fontFamily: 'body',
-        color: mode('gray.800', 'whiteAlpha.900')(props),
+        color: mode('gray.800', 'whiteAlpha.600')(props),
         bg: mode('white', 'brand.black')(props),
         lineHeight: 'base'
       }
@@ -50,7 +39,7 @@ const theme = extendTheme({
     },
     Text: {
       variants: {
-        switch: props => ({
+        switch: (props) => ({
           color: mode('brand.200', 'brand.100')(props),
           fontWeight: mode('500', '700')(props)
         })
@@ -70,7 +59,7 @@ const theme = extendTheme({
     },
     Button: {
       variants: {
-        default: props => ({
+        default: (props) => ({
           background: mode('brand.200', 'brand.100')(props),
           boxShadow: 'md',
           color: mode('white', 'whiteAlpha.900')(props),
@@ -137,7 +126,7 @@ const theme = extendTheme({
             transform: 'scale(0.9)'
           }
         },
-        selection: props => ({
+        selection: (props) => ({
           background: 'transparent',
           fontWeight: 500,
           color: mode('brand.babyblue', 'white')(props),
@@ -152,13 +141,14 @@ const theme = extendTheme({
             content: '""',
             width: '0px',
             position: 'absolute',
-            height: '5px',
+            height: '3px',
+            borderRadius: '100px',
             background: 'transparent',
             bottom: '9px',
             transition: '0.5s all ease'
           }
         }),
-        selectionactive: props => ({
+        selectionactive: (props) => ({
           background: 'transparent',
           fontWeight: 700,
           color: mode('brand.200', 'brand.100')(props),
@@ -167,7 +157,8 @@ const theme = extendTheme({
             content: '""',
             width: '65px',
             position: 'absolute',
-            height: '5px',
+            height: '3px',
+            borderRadius: '100px',
             background: mode('brand.200', 'brand.100')(props),
             bottom: '-10px',
             transition: '0.5s all ease'

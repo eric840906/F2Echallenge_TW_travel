@@ -1,4 +1,4 @@
-import { Divider, Heading, Box } from '@chakra-ui/react'
+import { Divider, Heading, Box, Icon } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 
 const dividerHeadingStyle = {
@@ -9,13 +9,19 @@ const dividerHeadingStyle = {
   marginBottom: 1
 }
 
-const SectionDivider = ({ title, px, color }) => {
+const SectionDivider = ({ title, px, color, icon }) => {
   return (
-    <Box w='100%' px={px}>
+    <Box w="100%" px={px}>
       <Heading {...dividerHeadingStyle} color={color}>
+        {icon && <Icon as={icon} h="35px" w="35px" verticalAlign="sub" />}
         {title}
       </Heading>
-      <Divider variant='default' background={color} borderColor={color} />
+      <Divider
+        variant="default"
+        borderRadius="100px"
+        background={color}
+        borderColor={color}
+      />
     </Box>
   )
 }
@@ -23,7 +29,8 @@ const SectionDivider = ({ title, px, color }) => {
 SectionDivider.propTypes = {
   title: PropTypes.string,
   px: PropTypes.number,
-  color: PropTypes.string
+  color: PropTypes.string,
+  icon: PropTypes.node
 }
 
 export default SectionDivider
