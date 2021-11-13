@@ -8,9 +8,9 @@ const MyMap = ({ lat, lng, name }) => {
   const { colorMode } = useColorMode()
   const Marker = () => (
     <Flex
-      position='absolute'
-      flexDirection='column'
-      transform='translate(-50%, -100%)'
+      position="absolute"
+      flexDirection="column"
+      transform="translate(-50%, -100%)"
       onClick={() =>
         window.open(
           `http://www.google.com/maps/search/${name}/@${lat},${lng},20z`,
@@ -20,8 +20,8 @@ const MyMap = ({ lat, lng, name }) => {
     >
       <Icon
         as={MdLocationOn}
-        h='50px'
-        w='50px'
+        h="50px"
+        w="50px"
         color={colorMode === 'light' ? 'brand.200' : 'brand.black'}
       />
     </Flex>
@@ -29,18 +29,18 @@ const MyMap = ({ lat, lng, name }) => {
   return (
     <Flex
       h={{ base: '218px', sm: '300px', md: '523px' }}
-      w='80%'
-      borderRadius='16px'
-      overflow='hidden'
+      w="80%"
+      borderRadius="16px"
+      overflow="hidden"
     >
       <Heading
         color={colorMode === 'light' ? 'brand.200' : 'brand.black'}
-        transform='translate(8px, 5px)'
-        position='absolute'
-        size='sm'
+        transform="translate(8px, 5px)"
+        position="absolute"
+        size="sm"
         zIndex={1}
       >
-        點擊圖示連結Google map
+        點擊圖示開啟Google map
       </Heading>
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_KEY }}

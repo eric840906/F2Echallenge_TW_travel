@@ -1,4 +1,5 @@
 import React from 'react'
+import { Loading } from 'Components/Loading'
 // import {
 //   HomePage,
 //   RestaurantPage,
@@ -23,7 +24,7 @@ const routes = [
     name: '旅遊景點',
     exact: true,
     element: (
-      <React.Suspense fallback={<>...</>}>
+      <React.Suspense fallback={<Loading />}>
         <SpotPage />
       </React.Suspense>
     )
@@ -33,7 +34,7 @@ const routes = [
     name: 'spotInfo',
     exact: true,
     element: (
-      <React.Suspense fallback={<>...</>}>
+      <React.Suspense fallback={<Loading />}>
         <DetailPage />
       </React.Suspense>
     )
@@ -43,7 +44,7 @@ const routes = [
     name: '美食餐廳',
     exact: true,
     element: (
-      <React.Suspense fallback={<>...</>}>
+      <React.Suspense fallback={<Loading />}>
         <RestaurantPage />
       </React.Suspense>
     )

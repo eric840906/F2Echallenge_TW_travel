@@ -1,7 +1,16 @@
-import { Heading, Flex, AspectRatio, useColorMode } from '@chakra-ui/react'
+import { useState } from 'react'
+import {
+  Heading,
+  Flex,
+  AspectRatio,
+  useColorMode,
+  Icon
+} from '@chakra-ui/react'
+import { FaLocationArrow } from 'react-icons/fa'
 import PropTypes from 'prop-types'
 import placeholder from 'assets/images/placeholders/placeholder150.png'
 const SpotCard = ({ spot, onClick }) => {
+  const [enter, setEnter] = useState()
   const { colorMode } = useColorMode()
   return (
     <AspectRatio key={spot.ID} ratio={1.67 / 1}>
@@ -22,7 +31,21 @@ const SpotCard = ({ spot, onClick }) => {
           spot.Picture.PictureUrl1 ? spot.Picture.PictureUrl1 : placeholder
         }
         onClick={onClick}
+        onMouseEnter={() => setEnter(true)}
+        onMouseLeave={() => setEnter(false)}
       >
+        <Flex
+          w="100%"
+          h="100%"
+          transition="all 0.3s ease"
+          backgroundColor="#00000080"
+          position="absolute"
+          opacity={enter ? '1' : '0'}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Icon as={FaLocationArrow} w="50px" h="50px" color="whiteAlpha.600" />
+        </Flex>
         <Heading
           w="100%"
           background={colorMode === 'light' ? 'white' : 'brand.black'}
