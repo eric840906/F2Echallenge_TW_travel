@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "./static/css/main.04303ff4.chunk.css",
-    "main.js": "./static/js/main.facfe2ac.chunk.js",
-    "main.js.map": "./static/js/main.facfe2ac.chunk.js.map",
+    "main.css": "./static/css/main.00d02648.chunk.css",
+    "main.js": "./static/js/main.dbe96fdd.chunk.js",
+    "main.js.map": "./static/js/main.dbe96fdd.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.0493d63b.js",
     "runtime-main.js.map": "./static/js/runtime-main.0493d63b.js.map",
     "static/css/2.4d8d6c40.chunk.css": "./static/css/2.4d8d6c40.chunk.css",
@@ -20,7 +20,7 @@
     "static/js/7.31fec888.chunk.js.map": "./static/js/7.31fec888.chunk.js.map",
     "index.html": "./index.html",
     "static/css/2.4d8d6c40.chunk.css.map": "./static/css/2.4d8d6c40.chunk.css.map",
-    "static/css/main.04303ff4.chunk.css.map": "./static/css/main.04303ff4.chunk.css.map",
+    "static/css/main.00d02648.chunk.css.map": "./static/css/main.00d02648.chunk.css.map",
     "static/js/2.b20ea39c.chunk.js.LICENSE.txt": "./static/js/2.b20ea39c.chunk.js.LICENSE.txt",
     "static/media/ChanghuaCounty.60a97351.jpg": "./static/media/ChanghuaCounty.60a97351.jpg",
     "static/media/Chiayi.7ccd8802.jpg": "./static/media/Chiayi.7ccd8802.jpg",
@@ -60,7 +60,7 @@
     "static/js/runtime-main.0493d63b.js",
     "static/css/2.4d8d6c40.chunk.css",
     "static/js/2.b20ea39c.chunk.js",
-    "static/css/main.04303ff4.chunk.css",
-    "static/js/main.facfe2ac.chunk.js"
+    "static/css/main.00d02648.chunk.css",
+    "static/js/main.dbe96fdd.chunk.js"
   ]
 }
