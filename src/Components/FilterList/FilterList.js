@@ -11,14 +11,14 @@ const FilterList = ({ cards }) => {
   const filterBtns = ['北台灣', '中台灣', '南台灣', '東台灣', '外島']
   const navigate = useNavigate()
   useEffect(() => {
-    return setFilteredCards(cards.filter(card => card.location === filter))
+    return setFilteredCards(cards.filter((card) => card.location === filter))
   }, [filter])
   const renderFilters = () =>
-    filterBtns.map(item => (
+    filterBtns.map((item) => (
       <Button
         variant={filter === item ? 'selectionactive' : 'selection'}
         fontSize={{ base: '22px', sm: '26px' }}
-        textTransform='capitalize'
+        textTransform="capitalize"
         onClick={() => setFilter(item)}
         value={item}
         key={item}
@@ -26,34 +26,8 @@ const FilterList = ({ cards }) => {
         {item}
       </Button>
     ))
-  // const renderCards = () => {
-  //   return filteredCards.map(card => (
-  //     <AspectRatio key={card.term} ratio={1.67 / 1}>
-  //       <Flex
-  //         backgroundImage={card.imageUrl}
-  //         backgroundSize='cover'
-  //         backgroundRepeat='no-repeat'
-  //         borderRadius='16px'
-  //         cursor='pointer'
-  //         onClick={() => navigate(`scenicspots/${card.term}`)}
-  //       >
-  //         <Flex
-  //           w='100%'
-  //           h='100%'
-  //           justifyContent='center'
-  //           alignItems='center'
-  //           background='#00000080'
-  //         >
-  //           <Text color='white' fontSize={{ base: '16px', sm: '22px' }}>
-  //             {card.city}
-  //           </Text>
-  //         </Flex>
-  //       </Flex>
-  //     </AspectRatio>
-  //   ))
-  // }
   const renderCards = () => {
-    return filteredCards.map(card => (
+    return filteredCards.map((card) => (
       <MaskCard
         key={card.term}
         onClick={() => navigate(`scenicspots/${card.term}`)}
@@ -62,8 +36,7 @@ const FilterList = ({ cards }) => {
     ))
   }
   return (
-    <VStack w='100%'>
-      {/* <SectionDivider title="our products" /> */}
+    <VStack w="100%">
       <Grid
         w={{ base: '100%', md: '50%' }}
         mb={50}

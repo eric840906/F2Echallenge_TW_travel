@@ -11,6 +11,7 @@ import {
   useColorMode,
   Divider
 } from '@chakra-ui/react'
+import { AiFillStar } from 'react-icons/ai'
 import { FaPhoneAlt } from 'react-icons/fa'
 import { RiGlobalLine } from 'react-icons/ri'
 import { FiMapPin, FiClock } from 'react-icons/fi'
@@ -26,8 +27,18 @@ const DetailPage = () => {
   const { colorMode } = useColorMode()
   const [currentDetail, setCurrentDetail] = useState({})
   const [nearbySpots, setNearbySpots] = useState([])
+  const [nearbyRests, setNearbyRests] = useState([])
+  const [nearbySleeps, setNearbySleeps] = useState([])
   const { target, id } = useParams()
-  const [nearby, searchNearby] = useNearby({ target })
+  const [nearbyScenicSpots, searchNearbyScenicSpots] = useNearby({
+    target: 'ScenicSpot'
+  })
+  const [nearbyRestaurants, searchNearbyRestaurants] = useNearby({
+    target: 'Restaurant'
+  })
+  const [nearbyHotels, searchNearbyHotels] = useNearby({
+    target: 'Hotel'
+  })
   const [detail, search] = useDetail({ target }, id)
   const isInitialMount = useRef(true)
   useEffect(() => {
@@ -43,15 +54,30 @@ const DetailPage = () => {
   }, [detail])
   useEffect(() => {
     currentDetail[0] &&
-      searchNearby({
+      searchNearbyScenicSpots({
+        lat: currentDetail[0].Position.PositionLat,
+        lon: currentDetail[0].Position.PositionLon
+      })
+    currentDetail[0] &&
+      searchNearbyRestaurants({
+        lat: currentDetail[0].Position.PositionLat,
+        lon: currentDetail[0].Position.PositionLon
+      })
+    currentDetail[0] &&
+      searchNearbyHotels({
         lat: currentDetail[0].Position.PositionLat,
         lon: currentDetail[0].Position.PositionLon
       })
   }, [currentDetail])
   useEffect(() => {
-    setNearbySpots(nearby)
-    // console.log(nearbySpots)
-  }, [nearby])
+    setNearbySpots(nearbyScenicSpots)
+  }, [nearbyScenicSpots])
+  useEffect(() => {
+    setNearbyRests(nearbyRestaurants)
+  }, [nearbyRestaurants])
+  useEffect(() => {
+    setNearbySleeps(nearbyHotels)
+  }, [nearbyHotels])
   const renderTag = (tagItem) => {
     return tagItem ? (
       <Flex
@@ -68,8 +94,8 @@ const DetailPage = () => {
       ''
     )
   }
-  const renderNearby = () => {
-    return nearbySpots.map((spot) => (
+  const renderNearby = (target, spots) => {
+    return spots.map((spot) => (
       <SpotCard
         key={spot.ID}
         spot={spot}
@@ -122,9 +148,7 @@ const DetailPage = () => {
                 h="20px"
                 color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
               />
-              {currentDetail[0].OpenTime
-                ? currentDetail[0].OpenTime
-                : '開放空間'}
+              {currentDetail[0].OpenTime ? currentDetail[0].OpenTime : '無資訊'}
             </ListItem>
             {currentDetail[0].Phone && (
               <ListItem wordBreak="break-all">
@@ -173,6 +197,17 @@ const DetailPage = () => {
                 </a>
               </ListItem>
             )}
+            {currentDetail[0].Grade && (
+              <ListItem wordBreak="break-all">
+                <ListIcon
+                  as={AiFillStar}
+                  w="25px"
+                  h="25px"
+                  color={colorMode === 'light' ? 'brand.200' : 'whiteAlpha.900'}
+                />
+                {currentDetail[0].Grade}
+              </ListItem>
+            )}
             <Divider />
           </List>
           <Text>{currentDetail[0].DescriptionDetail}</Text>
@@ -199,7 +234,43 @@ const DetailPage = () => {
         }}
         gridGap={5}
       >
-        {renderNearby()}
+        {renderNearby('ScenicSpot', nearbySpots)}
+      </Grid>
+      <VStack px={5}>
+        <SectionDivider
+          title="附近餐廳"
+          color={colorMode === 'light' ? 'brand.200' : 'brand.100'}
+        />
+      </VStack>
+      <Grid
+        w="80%"
+        templateColumns={{
+          base: 'repeat(1, 1fr)',
+          sm: 'repeat(2, 1fr)',
+          lg: 'repeat(3, 1fr)',
+          xl: 'repeat(4, 1fr)'
+        }}
+        gridGap={5}
+      >
+        {renderNearby('Restaurant', nearbyRests)}
+      </Grid>
+      <VStack px={5}>
+        <SectionDivider
+          title="附近住宿"
+          color={colorMode === 'light' ? 'brand.200' : 'brand.100'}
+        />
+      </VStack>
+      <Grid
+        w="80%"
+        templateColumns={{
+          base: 'repeat(1, 1fr)',
+          sm: 'repeat(2, 1fr)',
+          lg: 'repeat(3, 1fr)',
+          xl: 'repeat(4, 1fr)'
+        }}
+        gridGap={5}
+      >
+        {renderNearby('Hotel', nearbySleeps)}
       </Grid>
     </VStack>
   ) : (
