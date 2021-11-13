@@ -10,39 +10,39 @@ const Navbar = ({ onHamburgerClick }) => {
   const navigate = useNavigate()
   return (
     <Flex
-      position='sticky'
-      zIndex='sticky'
-      top='0'
+      position="sticky"
+      zIndex="sticky"
+      top="0"
       bg={colorMode === 'light' ? 'white' : 'brand.black'}
       boxShadow={
         colorMode === 'light'
           ? 'xs'
-          : '0 1px 2px 0px rgba(234, 234, 234, 0.2), 0 -9px 4px rgba(234, 234, 234, 0.2)'
+          : '0 1px 2px 0px #eaeaea33, 0 -9px 4px #eaeaea33'
       }
-      w='100%'
-      alignItems='center'
+      w="100%"
+      alignItems="center"
       py={5}
       px={10}
-      color='white'
-      gridGap='5rem'
+      color="white"
+      gridGap="5rem"
     >
-      <Flex alignSelf='center' cursor='pointer' onClick={() => navigate('/')}>
+      <Flex alignSelf="center" cursor="pointer" onClick={() => navigate('/')}>
         <Logo
           width={26}
           height={50}
           fill={colorMode === 'light' ? 'brand.200' : 'brand.100'}
           subcolor={colorMode === 'light' ? 'brand.100' : 'brand.babyblue'}
-          fontSize='20px'
+          fontSize="20px"
         />
       </Flex>
-      <Flex display={{ base: 'none', md: 'flex' }} gridGap='5rem' mr='auto'>
-        <NavLink to='/scenicspots/Taiwan'>
-          <Text variant='switch' fontSize='20px'>
+      <Flex display={{ base: 'none', md: 'flex' }} gridGap="5rem" mr="auto">
+        <NavLink to="/scenicspots/Taiwan">
+          <Text variant="switch" fontSize="20px">
             旅遊景點
           </Text>
         </NavLink>
-        <NavLink to='/restaurants/main/Taiwan/All'>
-          <Text variant='switch' fontSize='20px'>
+        <NavLink to="/restaurants/main/Taiwan/All">
+          <Text variant="switch" fontSize="20px">
             美食餐廳
           </Text>
         </NavLink>
@@ -51,12 +51,12 @@ const Navbar = ({ onHamburgerClick }) => {
       <Button
         display={{ base: 'block', md: 'none' }}
         background={colorMode === 'light' ? 'white' : 'brand.black'}
-        marginLeft='auto'
-        boxShadow='none'
-        w='40px'
-        h='40px'
+        marginLeft="auto"
+        boxShadow="none"
+        w="40px"
+        h="40px"
         onClick={onHamburgerClick}
-        size='sm'
+        size="sm"
       >
         <HamburgerIcon
           w={5}

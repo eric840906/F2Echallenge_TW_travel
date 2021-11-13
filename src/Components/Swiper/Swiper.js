@@ -6,6 +6,7 @@ import './swiper.css'
 import { Image, Flex, Text, Heading } from '@chakra-ui/react'
 import Proptype from 'prop-types'
 import { imageBox } from 'assets/style'
+import placeholder from 'assets/images/placeholders/placeholderBig.png'
 
 SwiperCore.use([Pagination, EffectCoverflow])
 export const TheSwiper = ({ itemArr, options, func }) => {
@@ -53,9 +54,7 @@ export const TheSwiper = ({ itemArr, options, func }) => {
           marginBottom="40px"
           bg="brand.100"
           backgroundImage={
-            item.Picture.PictureUrl1
-              ? item.Picture.PictureUrl1
-              : 'http://www.vvc.cl/wp-content/uploads/2016/09/ef3-placeholder-image.jpg'
+            item.Picture.PictureUrl1 ? item.Picture.PictureUrl1 : placeholder
           }
           backgroundPosition="center"
           backgroundRepeat="no-repeat"

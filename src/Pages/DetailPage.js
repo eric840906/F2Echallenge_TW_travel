@@ -20,14 +20,15 @@ import { useRef, useState, useEffect } from 'react'
 import { SectionDivider } from 'Components/SectionDivider'
 import { SpotCard } from 'Components/Cards'
 import { MyMap } from 'Components/Map'
-const SpotInfoPage = () => {
+import placeholder from 'assets/images/placeholders/placeholderBig.png'
+const DetailPage = () => {
   const navigate = useNavigate()
   const { colorMode } = useColorMode()
   const [currentDetail, setCurrentDetail] = useState({})
   const [nearbySpots, setNearbySpots] = useState([])
-  const { id } = useParams()
-  const [nearby, searchNearby] = useNearby({ target: 'ScenicSpot' })
-  const [detail, search] = useDetail({ target: 'ScenicSpot' }, id)
+  const { target, id } = useParams()
+  const [nearby, searchNearby] = useNearby({ target })
+  const [detail, search] = useDetail({ target }, id)
   const isInitialMount = useRef(true)
   useEffect(() => {
     if (isInitialMount.current) {
@@ -72,7 +73,7 @@ const SpotInfoPage = () => {
       <SpotCard
         key={spot.ID}
         spot={spot}
-        onClick={() => navigate(`/scenicspots/detail/${spot.ID}`)}
+        onClick={() => navigate(`/${target}/detail/${spot.ID}`)}
       />
     ))
   }
@@ -87,11 +88,12 @@ const SpotInfoPage = () => {
         gridGap={5}
       >
         <Image
+          backgroundColor="white"
           borderRadius="16px"
           src={
             currentDetail[0].Picture.PictureUrl1
               ? currentDetail[0].Picture.PictureUrl1
-              : 'http://www.vvc.cl/wp-content/uploads/2016/09/ef3-placeholder-image.jpg'
+              : placeholder
           }
           h="100%"
         ></Image>
@@ -214,4 +216,4 @@ const SpotInfoPage = () => {
   )
 }
 
-export default SpotInfoPage
+export default DetailPage

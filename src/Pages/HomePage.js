@@ -84,7 +84,7 @@ const HomePage = () => {
   //   ))
   // }
   const renderCards = () => {
-    return restaurantCategories.map(card => (
+    return restaurantCategories.map((card) => (
       <MaskCard
         key={card.name}
         card={card}
@@ -92,8 +92,8 @@ const HomePage = () => {
       />
     ))
   }
-  const goToSpot = spot => {
-    return () => navigate(`scenicspots/detail/${spot.ID}`)
+  const goToSpot = (spot) => {
+    return () => navigate(`ScenicSpot/detail/${spot.ID}`)
   }
   return (
     <>
@@ -107,7 +107,7 @@ const HomePage = () => {
         <FilterList cards={cities} />
         <VStack px={5}>
           <SectionDivider
-            title='人氣美食'
+            title="人氣美食"
             color={colorMode === 'light' ? 'brand.200' : 'brand.100'}
           />
         </VStack>

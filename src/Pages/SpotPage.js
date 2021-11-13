@@ -43,7 +43,7 @@ const SpotPage = () => {
       <SpotCard
         key={spot.ID}
         spot={spot}
-        onClick={() => navigate(`/scenicspots/detail/${spot.ID}`)}
+        onClick={() => navigate(`/ScenicSpot/detail/${spot.ID}`)}
       />
     ))
   }

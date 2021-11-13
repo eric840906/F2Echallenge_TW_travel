@@ -46,43 +46,43 @@ const SpotPage = () => {
     setCurrentSpots([...currentSpots, ...spots])
     console.log(currentSpots)
   }, [spots])
-  const renderCard = spots => {
-    return spots.map(spot => (
+  const renderCard = (spots) => {
+    return spots.map((spot) => (
       <SpotCard
         key={spot.ID}
         spot={spot}
-        onClick={() => navigate(`/restaurants/detail/${spot.ID}`)}
+        onClick={() => navigate(`/Restaurant/detail/${spot.ID}`)}
       />
     ))
   }
   return (
-    <VStack w='100%' gridGap={7} my={14}>
+    <VStack w="100%" gridGap={7} my={14}>
       <VStack px={5}>
         <SectionDivider
-          title='想吃什麼?'
+          title="想吃什麼?"
           color={colorMode === 'light' ? 'brand.200' : 'brand.100'}
         />
       </VStack>
       <Flex gridGap={5}>
         <Select
-          maxW='300px'
-          onChange={e => setSearchTerm(e.currentTarget.value)}
+          maxW="300px"
+          onChange={(e) => setSearchTerm(e.currentTarget.value)}
           value={searchTerm}
         >
           <option disabled>選擇地區</option>
-          {[...cityMap].map(city => (
+          {[...cityMap].map((city) => (
             <option key={city[1]} value={city[1]}>
               {city[0]}
             </option>
           ))}
         </Select>
         <Select
-          maxW='300px'
-          onChange={e => setClassItem(e.currentTarget.value)}
+          maxW="300px"
+          onChange={(e) => setClassItem(e.currentTarget.value)}
           value={classitem}
         >
           <option disabled>選擇種類</option>
-          {[...[{ name: '全部' }], ...restaurantCategories].map(item => (
+          {[...[{ name: '全部' }], ...restaurantCategories].map((item) => (
             <option
               key={item.name}
               value={item.name === '全部' ? '' : item.name}
@@ -93,7 +93,7 @@ const SpotPage = () => {
         </Select>
       </Flex>
       <Grid
-        w='80%'
+        w="80%"
         templateColumns={{
           base: 'repeat(1, 1fr)',
           sm: 'repeat(2, 1fr)',
@@ -105,7 +105,7 @@ const SpotPage = () => {
         {renderCard(currentSpots)}
       </Grid>
       <Button
-        variant='default'
+        variant="default"
         disabled={!loadMore}
         onClick={() => setSkip(skip + 30)}
       >

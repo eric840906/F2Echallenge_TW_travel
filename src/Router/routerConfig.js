@@ -3,17 +3,13 @@ import React from 'react'
 //   HomePage,
 //   RestaurantPage,
 //   SpotPage,
-//   RestaurantInfoPage,
-//   SpotInfoPage
+//   DetailPage
 // } from 'Pages'
 import { HomePage } from 'Pages'
 import { Navigate } from 'react-router-dom'
 const SpotPage = React.lazy(() => import('../Pages/SpotPage'))
-const SpotInfoPage = React.lazy(() => import('../Pages/SpotInfoPage'))
+const DetailPage = React.lazy(() => import('../Pages/DetailPage'))
 const RestaurantPage = React.lazy(() => import('../Pages/RestaurantPage'))
-const RestaurantInfoPage = React.lazy(() =>
-  import('../Pages/RestaurantInfoPage')
-)
 
 const routes = [
   {
@@ -33,12 +29,12 @@ const routes = [
     )
   },
   {
-    path: '/scenicspots/detail/:id',
+    path: '/:target/detail/:id',
     name: 'spotInfo',
     exact: true,
     element: (
       <React.Suspense fallback={<>...</>}>
-        <SpotInfoPage />
+        <DetailPage />
       </React.Suspense>
     )
   },
@@ -49,16 +45,6 @@ const routes = [
     element: (
       <React.Suspense fallback={<>...</>}>
         <RestaurantPage />
-      </React.Suspense>
-    )
-  },
-  {
-    path: '/restaurants/:place/:id',
-    name: 'RestaurantInfo',
-    exact: true,
-    element: (
-      <React.Suspense fallback={<>...</>}>
-        <RestaurantInfoPage />
       </React.Suspense>
     )
   },
