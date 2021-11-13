@@ -131,7 +131,9 @@ const theme = extendTheme({
           fontWeight: 500,
           color: mode('brand.babyblue', 'white')(props),
           _hover: {
-            color: 'brand.100'
+            color: {
+              md: 'brand.100'
+            }
           },
           _active: {
             color: mode('brand.200', 'brand.100')(props),
