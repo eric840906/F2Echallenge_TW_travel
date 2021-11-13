@@ -8,10 +8,19 @@ import {
 } from '@chakra-ui/react'
 import { FaLocationArrow } from 'react-icons/fa'
 import PropTypes from 'prop-types'
-import placeholder from 'assets/images/placeholders/placeholder150.png'
+import defaultholder from 'assets/images/placeholders/placeholder150.png'
+import scenic from 'assets/images/placeholders/scenic.png'
+import food from 'assets/images/placeholders/food.png'
+import hotel from 'assets/images/placeholders/hotel.png'
 const SpotCard = ({ spot, onClick }) => {
   const [enter, setEnter] = useState()
   const { colorMode } = useColorMode()
+  const placeholder = (id) => {
+    if (id.indexOf('C1') > -1) return scenic
+    if (id.indexOf('C3') > -1) return food
+    if (id.indexOf('C4') > -1) return hotel
+    return defaultholder
+  }
   return (
     <AspectRatio key={spot.ID} ratio={1.67 / 1}>
       <Flex
@@ -23,12 +32,14 @@ const SpotCard = ({ spot, onClick }) => {
         flexDirection="column"
         boxShadow={colorMode === 'light' ? 'lg' : '0px 2px 6px -3px #eaeaea33'}
         marginBottom="40px"
-        bg="brand.100"
-        backgroundPosition="bottom"
+        bg="white"
+        backgroundPosition={spot.ID.indexOf('C1') > -1 ? 'bottom' : 'center'}
         backgroundSize="cover"
         backgroundRepeat="no-repeat"
         backgroundImage={
-          spot.Picture.PictureUrl1 ? spot.Picture.PictureUrl1 : placeholder
+          spot.Picture.PictureUrl1
+            ? spot.Picture.PictureUrl1
+            : placeholder(spot.ID)
         }
         onClick={onClick}
         onMouseEnter={() => setEnter(true)}

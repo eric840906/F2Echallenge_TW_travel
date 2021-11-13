@@ -21,7 +21,10 @@ import { useRef, useState, useEffect } from 'react'
 import { SectionDivider } from 'Components/SectionDivider'
 import { SpotCard } from 'Components/Cards'
 import { MyMap } from 'Components/Map'
-import placeholder from 'assets/images/placeholders/placeholderBig.png'
+import defaultholder from 'assets/images/placeholders/placeholderBig.png'
+import scenic from 'assets/images/placeholders/scenicBig.png'
+import food from 'assets/images/placeholders/foodBig.png'
+import hotel from 'assets/images/placeholders/hotelBig.png'
 const DetailPage = () => {
   const navigate = useNavigate()
   const { colorMode } = useColorMode()
@@ -103,6 +106,12 @@ const DetailPage = () => {
       />
     ))
   }
+  const placeholder = (id) => {
+    if (id.indexOf('C1') > -1) return scenic
+    if (id.indexOf('C3') > -1) return food
+    if (id.indexOf('C4') > -1) return hotel
+    return defaultholder
+  }
   return currentDetail[0] ? (
     <VStack gridGap={7} my={14}>
       <Grid
@@ -119,7 +128,7 @@ const DetailPage = () => {
           src={
             currentDetail[0].Picture.PictureUrl1
               ? currentDetail[0].Picture.PictureUrl1
-              : placeholder
+              : placeholder(currentDetail[0].ID)
           }
           h="100%"
         ></Image>
@@ -210,7 +219,9 @@ const DetailPage = () => {
             )}
             <Divider />
           </List>
-          <Text>{currentDetail[0].DescriptionDetail}</Text>
+          <Text>
+            {currentDetail[0].DescriptionDetail || currentDetail[0].Description}
+          </Text>
         </Flex>
       </Grid>
       <MyMap
