@@ -52,31 +52,6 @@ const HomePage = () => {
     centeredSlides: true,
     loop: true
   }
-
-  // const renderCards = () => {
-  //   return restaurantCategories.map(card => (
-  //     <AspectRatio key={card.class} ratio={1.67 / 1}>
-  //       <Flex
-  //         backgroundImage={card.imageUrl}
-  //         backgroundSize='cover'
-  //         backgroundRepeat='no-repeat'
-  //         borderRadius='16px'
-  //       >
-  //         <Flex
-  //           w='100%'
-  //           h='100%'
-  //           justifyContent='center'
-  //           alignItems='center'
-  //           background='#00000080'
-  //         >
-  //           <Text color='white' fontSize={{ base: '16px', sm: '22px' }}>
-  //             {card.class}
-  //           </Text>
-  //         </Flex>
-  //       </Flex>
-  //     </AspectRatio>
-  //   ))
-  // }
   const renderCards = () => {
     return restaurantCategories.map((card) => (
       <MaskCard

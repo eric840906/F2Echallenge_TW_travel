@@ -1,7 +1,18 @@
-import { useEffect, useState, useRef } from 'react'
-import { VStack, Grid, useColorMode, Select, Button } from '@chakra-ui/react'
+import { useEffect, useState } from 'react'
+import {
+  VStack,
+  Grid,
+  useColorMode,
+  Select,
+  Button,
+  FormControl,
+  Input,
+  IconButton,
+  Box
+} from '@chakra-ui/react'
 import { cityMap } from 'data/cityData'
 import { useParams, useNavigate } from 'react-router-dom'
+import { SearchIcon } from '@chakra-ui/icons'
 import { useSpots } from 'hooks'
 import { SectionDivider } from 'Components/SectionDivider'
 import { SpotCard } from 'Components/Cards'
@@ -12,32 +23,27 @@ const SpotPage = () => {
   const { place } = useParams()
   const [currentSpots, setCurrentSpots] = useState([])
   const [searchTerm, setSearchTerm] = useState(place)
+  const [searchString, setSearchString] = useState('')
   const [skip, setSkip] = useState(0)
   const [spots, search] = useSpots({ target: 'ScenicSpot' }, place)
   const [loadMore, setLoadMore] = useState(true)
-  const isInitialMount = useRef(true)
-  useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false
-    } else {
-      setLoadMore(true)
-      setSkip(0)
-      setCurrentSpots([])
-      search({ term: searchTerm, skip: 0 })
-    }
-  }, [searchTerm])
   useEffect(() => {
     if (skip === 0) {
       return {}
     } else {
-      search({ term: searchTerm, skip })
+      search({ term: searchTerm, skip, searchString })
     }
   }, [skip])
   useEffect(() => {
     setLoadMore(!(spots.length === 0))
     setCurrentSpots([...currentSpots, ...spots])
-    // console.log(currentSpots)
   }, [spots])
+  const searchInfo = () => {
+    setLoadMore(true)
+    setSkip(0)
+    setCurrentSpots([])
+    search({ term: searchTerm, skip: 0, searchString })
+  }
   const renderCard = (spots) => {
     return spots.map((spot) => (
       <SpotCard
@@ -55,17 +61,43 @@ const SpotPage = () => {
           color={colorMode === 'light' ? 'brand.200' : 'brand.100'}
         />
       </VStack>
-      <Select
-        maxW="300px"
-        onChange={(e) => setSearchTerm(e.currentTarget.value)}
-        value={searchTerm}
+      <Box
+        as="form"
+        onSubmit={(e) => {
+          e.preventDefault()
+          searchInfo()
+        }}
       >
-        {[...cityMap].map((city) => (
-          <option key={city[1]} value={city[1]}>
-            {city[0]}
-          </option>
-        ))}
-      </Select>
+        <FormControl display="flex" maxW="300px">
+          <Select
+            w="150px"
+            onChange={(e) => setSearchTerm(e.currentTarget.value)}
+            value={searchTerm}
+            borderRadius="10px 0 0 10px"
+            borderRight="none"
+          >
+            {[...cityMap].map((city) => (
+              <option key={city[1]} value={city[1]}>
+                {city[0]}
+              </option>
+            ))}
+          </Select>
+          <Input
+            placeholder="搜尋地點"
+            borderRadius="0"
+            borderRight="none"
+            onChange={(e) => setSearchString(e.currentTarget.value)}
+          ></Input>
+          <IconButton
+            type="submit"
+            variant="outline"
+            borderLeft="none"
+            borderRadius="0 10px 10px 0"
+            aria-label="Search database"
+            icon={<SearchIcon />}
+          />
+        </FormControl>
+      </Box>
       <Grid
         w="80%"
         templateColumns={{

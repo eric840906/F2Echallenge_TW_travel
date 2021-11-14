@@ -55,7 +55,6 @@ const DetailPage = () => {
   }, [])
   useEffect(() => {
     setCurrentDetail(detail)
-    // console.log(currentDetail)
   }, [detail])
   useEffect(() => {
     currentDetail[0] &&
